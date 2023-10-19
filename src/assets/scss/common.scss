@@ -1,0 +1,19 @@
+// 공통스타일
+
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container {
+	max-width: 840px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+

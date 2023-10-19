@@ -1,0 +1,23 @@
+@import '../common.scss';
+
+.main {
+	&__banner {
+		a {
+			display: block;
+			text-align: center;
+		}
+	}
+}
+
+.article {
+	&__lists {
+		display: flex;
+		width: 100%;
+		gap: 2em;
+		> div {
+			flex: 1 1 50%;
+			max-width: 50%;
+		}
+	}
+}
+
