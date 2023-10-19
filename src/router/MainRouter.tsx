@@ -12,7 +12,7 @@ const MainRouter = () => {
       <main className='container' style={{marginTop:50}}>
         <Routes>
           <Route path="/" element={<Main />}/>
-          <Route path="/:category" element={<ListPage />}/>
+          <Route path="/:category" element={<ListPage />} />
           <Route path="/:category/new" element={<ListWrite />}/> 
           <Route path="/:category/:id" element={<ListDetail />}/>
           <Route path="/search" element={<Search />}/>
