@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 const PostItem = () => {
   return (
-    <Link to={`/category/id`} className="post__item">
+    <Link to={`/category/id`} className="post__item px-20">
         <div className="inner">
           <div className='user-area'>
             <p className="nickname">사용자이름</p>
