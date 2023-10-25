@@ -1,3 +1,4 @@
+import KakaoRedirectPage from 'pages/KakaoRedirectPage'
 import ListDetail from 'pages/ListDetail'
 import ListPage from 'pages/ListPage'
 import ListWrite from 'pages/ListWrite'
@@ -17,6 +18,7 @@ const MainRouter = () => {
           <Route path="/:category/:id" element={<ListDetail />}/>
           <Route path="/search" element={<Search />}/>
           <Route path="/login" element={<Login />}/>
+          <Route path="/oauth/callback/kakao" element={<KakaoRedirectPage />}></Route>
         </Routes>
       </main>
     </>
