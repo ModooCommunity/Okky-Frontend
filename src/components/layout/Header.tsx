@@ -7,16 +7,16 @@ const Header = () => {
       <div className="header__container">
         <div className="header__menu">
           <div className='logo'>
-            <Link to={`/`}>
+            <Link to={`/main`}>
               <img src="/assets/okky-munchkin-logo.png" alt="로고" />
             </Link>  
           </div>
           <ul className='menu-list'>
             <li className='list'>
-              <Link to={`/community`}>커뮤니티</Link>  
+              <Link to={`/main/community`}>커뮤니티</Link>  
             </li>  
             <li className='list'>
-              <Link to={`/question`}>Qna</Link>  
+              <Link to={`/main/question`}>Qna</Link>  
             </li> 
           </ul>
         </div> 
