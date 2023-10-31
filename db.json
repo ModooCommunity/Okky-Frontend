@@ -45,12 +45,20 @@
     "qna_data": [
       {
         "id": 1,
-        "title": "제목입니다.",
-        "nickname": "닉네임 입니다.",
-        "content": "내용입니다.",
-        "view_count": 1,
-        "comment_count": 1,
-        "created_at": "2023-10-17T16:30:00",
+        "title": "기획자 기술등급 기준",
+        "nickname": "눈사라미",
+        "view_count": 4,
+        "comment_count": 5,
+        "created_at": "2023-10-27T12:00:00",
+        "category" : "question"
+      },
+      {
+        "id": 2,
+        "title": "mixed content 에러",
+        "nickname": "동동윤",
+        "view_count": 11,
+        "comment_count": 8,
+        "created_at": "2022-08-11T12:23:34",
         "category" : "question"
       }
     ]
@@ -59,12 +67,42 @@
     "community_data": [
       {
         "id": 1,
-        "title": "제목입니다.",
-        "nickname": "닉네임 입니다.",
-        "content": "내용입니다.",
-        "view_count": 1,
-        "comment_count": 1,
-        "created_at": "2023-10-17T16:30:00",
+        "title": "si 군기 이게 맞나요...",
+        "nickname": "HNC 떡상기원",
+        "view_count": 9,
+        "comment_count": 23,
+        "created_at": "2021-11-18T05:09:34",
+        "category" : "community"
+      },
+      {
+        "id": 2,
+        "title": "공무원 전산직도 빡시네요...",
+        "nickname": "게임하는아빠",
+        "view_count": 7,
+        "comment_count": 3,
+        "created_at": "2023-05-28T09:09:11",
+        "category" : "community"
+      }
+    ]
+  },
+  "search" : {
+    "search_data": [
+      {
+        "id": 1,
+        "title": "검색한 제목입니다",
+        "nickname": "필또링",
+        "view_count": 80,
+        "comment_count": 101,
+        "created_at": "2023-10-17 16:30:00",
+        "category" : "community"
+      },
+      {
+        "id": 2,
+        "title": "검색한 제목입니다2",
+        "nickname": "검색왕",
+        "view_count": 83,
+        "comment_count": 101,
+        "created_at": "2023-10-17 16:30:00",
         "category" : "community"
       }
     ]

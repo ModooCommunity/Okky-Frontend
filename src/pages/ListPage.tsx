@@ -3,39 +3,54 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { Button } from 'styles/Button'
 import '../assets/scss/pages/lists.scss'
 import { useRecoilState, useRecoilValue } from 'recoil'
-import { cateDataI, mainDataI, mainSelector, mainState } from 'store/mainAtom'
+import { Categories, cateDataI, cateState, mainDataI, mainSelector, mainState } from 'store/mainAtom'
 import { useEffect, useState } from 'react'
-import { getCategories } from 'api/ListApi'
+import { getCategories, getLists } from 'api/ListApi'
 
 const ListPage = () => {
 
   const navigate = useNavigate();
-  const Lists = useRecoilValue(mainSelector);
   const location = useLocation();
+  const [cateData, setCateData] = useRecoilState(cateState);
 
-  const [categories, setCategories] = useState<mainDataI['qna_data' | 'community_data']>();
+  console.log(location.pathname)
+
+  const pathname = location.pathname === '/main/community' ? 'community' : location.pathname === '/main/question' ? 'question' : '';
+
+  console.log(pathname)
+
+  // useEffect(() => {
+  //   getCategories(Categories.question)
+  //   .then(data => {
+  //     console.log(Categories.question)
+  //     setCateData([data]);
+  //     console.log(cateData)
+  //   })
+  //   .catch(error => {
+  //     console.log("Error fetching token:", error)
+  //   })
+  // }, []);
 
   useEffect(() => {
-    getCategories('question')
-      .then(data => {
-        setCategories(data);
-        console.log(data); // 수정된 부분: categories 대신 data 사용
-      })
-      .catch(error => {
+    const fetchData = async () => {
+      try {
+        const data = await getCategories(pathname);
+        setCateData(data);
+        console.log(cateData);
+        // console.log(cateData);
+      } catch (error) {
         console.log("Error fetching token:", error);
-      });
-  }, []);
+      }
+    };
 
-  // const filteredData = location.pathname === '/main/question'
-  // ? Lists.qna_data
-  // : location.pathname === '/main/community'
-  // ? Lists.community_data
-  // : null;
+    fetchData();
+  }, [setCateData, pathname]);
 
   return (
     <>
      <Button onClick={() => { navigate(`/question/new`)}}>질문하기</Button>
-      <PostList mainData={categories} />
+     {cateData.qnaData && <PostList categoryData={cateData.qnaData} />}
+     {cateData.communityData && <PostList categoryData={cateData.communityData} />}
     </>
   )
 }

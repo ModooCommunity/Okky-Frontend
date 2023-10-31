@@ -17,7 +17,7 @@ const MainRouter = () => {
           <Route path="/main/:category" element={<ListPage />} />
           <Route path="/question/new" element={<ListWrite />}/> 
           <Route path="/:category/:id" element={<ListDetail />}/>
-          <Route path="/search" element={<Search />}/>
+          <Route path="/search" element={<Search />} />
           <Route path="/login" element={<Login />}/>
           <Route path="/oauth/callback/kakao" element={<KakaoRedirectPage />}></Route>
         </Routes>

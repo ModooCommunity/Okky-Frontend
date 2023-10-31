@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import '../../assets/scss/components/header.scss'
+import SearchInput from 'components/template/SearchInput'
 
 const Header = () => {
   return (
@@ -21,9 +22,7 @@ const Header = () => {
           </ul>
         </div> 
         <ul className='header__util'>
-          <li>
-            <input type="text" placeholder='검색영역' />
-          </li>
+          <SearchInput />
           <li className='login-btn'>
             <Link to={`/login`}>로그인</Link>
           </li>

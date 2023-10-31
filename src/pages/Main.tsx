@@ -13,7 +13,7 @@ const Main = () => {
     getLists()
     .then(data => {
       setMainData(data);
-      console.log(mainData)
+      console.log(data);
     })
     .catch(error => {
       console.log("Error fetching token:", error)
@@ -30,12 +30,12 @@ const Main = () => {
       <div className="article__lists">
         <div className='article__lists--left'>
           <div className="inner">
-            <PostList mainData={mainData?.qna_data} />
+            <PostList categoryData={mainData?.qnaData} />
           </div>
         </div>
         <div className="article__lists--right">
           <div className="inner">
-            <PostList mainData={mainData?.community_data} />
+            <PostList categoryData={mainData?.communityData} />
           </div>
         </div>
       </div>
