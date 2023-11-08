@@ -1,0 +1,74 @@
+@import '../common.scss';
+
+.comment__wrap {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	position: relative;
+
+	input {
+		width: 100%;
+		font-size: 14px;
+		padding: 10px 15px;
+		color: #666;
+		outline: 0;
+		border: 1px solid #dedede;
+		border-radius: 10px;
+	}
+
+	.comment {
+		color: #666;
+		padding-right: 20px;
+		margin-top: 12px;
+		line-height: 1.2;
+	}
+}
+
+.profile {
+	background-color: #e4f0ff;
+	border-radius: 50%;
+	flex: 0 0 40px;
+	width: 40px;
+	height: 40px;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color: #828282;
+}
+
+.btn__wrap {
+	margin-top: 20px;
+	text-align: right;
+}
+
+.edit-btn {
+	button {
+		outline: 0;
+		border: 0;
+		background-color: white;
+		position: absolute;
+		right: 0;
+		top: 26%;
+		cursor: pointer;
+	}
+}
+
+.list-wrap {
+	position: absolute;
+	right: 0;
+	top: 37px;
+	background-color: white;
+	border-left: 1px solid #cdcdcd;
+	border-right: 1px solid #cdcdcd;
+	border-top: 1px solid #cdcdcd;
+	.lists {
+		font-size: 14px;
+		padding: 8px 20px;
+		border-bottom: 1px solid #cdcdcd;
+		cursor: pointer;
+		svg {
+			margin-right: 5px;
+		}
+	}
+}
+

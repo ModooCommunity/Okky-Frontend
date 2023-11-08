@@ -15,16 +15,6 @@ export interface CategoryData {
   category: Categories;
 }
 
-export interface CategoryData {
-  id: number;
-  title: string;
-  nickname: string;
-  viewCount: number;
-  commentCount: number;
-  createdAt: Date;
-  category: Categories;
-}
-
 export interface mainDataI {
   qnaData: CategoryData[];
   communityData: CategoryData[];

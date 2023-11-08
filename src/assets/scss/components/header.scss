@@ -31,13 +31,36 @@
 	&__util {
 		@include flex-center;
 		gap: 1em;
-		input {
-			font-size: 14px;
+		.search-inner {
 			border: 1px solid #dedede;
 			border-radius: 20px;
+			overflow: hidden;
+			position: relative;
+		}
+		input,
+		select {
+			font-size: 14px;
 			padding: 10px 15px;
 			color: #666;
 			outline: 0;
+			border: none;
+		}
+		input {
+			padding-right: 50px;
+		}
+		button {
+			border: none;
+			outline: none;
+			position: absolute;
+			cursor: pointer;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			background-color: white;
+		}
+		svg {
+			color: #bcbcbc;
+			font-size: 16px;
 		}
 		.login-btn {
 			a {

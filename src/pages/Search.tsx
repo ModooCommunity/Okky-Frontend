@@ -1,59 +1,38 @@
-import axios from 'axios';
 import PostList from 'components/template/PostList';
-import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { CategoryData } from 'store/mainAtom'; // mainAtom 파일의 경로에 따라 수정해주세요.
+import { getSearchData } from '../api/ListApi';
 
 const Search = () => {
 
-  const apiURL = 'https://724c-14-38-157-83.ngrok-free.app'
   const [searchResult, setSearchResult] = useState<CategoryData[]>([]);
   const location = useLocation();
   const params = new URLSearchParams(location.search);
-  const title = params.get("title");
-  const content = params.get("content");
-  const keyword = params.get("keyword");
-
-  console.log(title, content, keyword)
+  const title = params.get("title")?.replace(/"/g, "");
+  const content = params.get("content")?.replace(/"/g, "");
+  const keyword = params.get("keyword")?.replace(/"/g, "");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         let response;
         if (title) {
-          response = await axios.get(`${apiURL}/search?title=${title}`, {
-            headers: {
-              'Content-Type': 'application/json',
-              'ngrok-skip-browser-warning': '69420',
-            }
-          });
-          console.log(response.data);
+          response = await getSearchData(`?title=${title}`);
+          console.log(response);
         } else if (content) {
-          response = await axios.get(`${apiURL}/search?content=${content}`, {
-            headers: {
-              'Content-Type': 'application/json',
-              'ngrok-skip-browser-warning': '69420',
-            }
-          });
-          console.log(response.data);
+          response = await getSearchData(`?content=${content}`);
+          console.log(response);
         } else if (keyword) {
-          response = await axios.get(`${apiURL}/search?keyword=${keyword}`, {
-            headers: {
-              'Content-Type': 'application/json',
-              'ngrok-skip-browser-warning': '69420',
-            }
-          });
-          console.log(response.data);
+          response = await getSearchData(`?keyword=${keyword}`);
+          console.log(response);
         } else {
-          response = await axios.get(`${apiURL}/search`, {    headers: {
-            'Content-Type': 'application/json',
-            'ngrok-skip-browser-warning': '69420',
-          }});
-          console.log(response.data);
+          response = await getSearchData('');
+          console.log(response);
         }
-        setSearchResult(response.data.searchData);
+        setSearchResult(response.searchData);
       } catch (error) {
-        console.log("Error fetching token:", error);
+        console.error("토큰을 가져오는 중 오류 발생:", error);
       }
     };
 

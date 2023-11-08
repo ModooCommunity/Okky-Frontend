@@ -1,9 +1,9 @@
-import React from 'react'
+import Comment from '../components/template/Comment';
 
 const ListWrite = () => {
   return (
     <div>
-      작성 및 수정페이지
+      <Comment />
     </div>
   )
 }
