@@ -1,0 +1,33 @@
+.detail-wrapper {
+  
+  .detail-top {
+    display: flex;
+    justify-content: space-between;
+    .top-userinfo-area {
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .top-update-area {
+
+    }
+  }
+
+  .detail-middle {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    //적용 x -> padding-bottom 적용해주면 될듯
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      padding-bottom: 30px;
+    }
+    p {
+      
+    }
+  }
+
+  .detail-bottom {
+  }
+}

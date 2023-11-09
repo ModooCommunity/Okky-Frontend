@@ -1,3 +1,4 @@
+import Chat from 'pages/Chat'
 import KakaoRedirectPage from 'pages/KakaoRedirectPage'
 import ListDetail from 'pages/ListDetail'
 import ListPage from 'pages/ListPage'
@@ -14,11 +15,12 @@ const MainRouter = () => {
         <Routes>
           <Route path="/" element={<Main />}/>
           <Route path="/:category" element={<ListPage />} />
-          <Route path="/:category/new" element={<ListWrite />}/> 
-          <Route path="/:category/:id" element={<ListDetail />}/>
+          <Route path="/question/new" element={<ListWrite />}/> 
+          <Route path="/question/:id" element={<ListDetail />}/>
           <Route path="/search" element={<Search />}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/oauth/callback/kakao" element={<KakaoRedirectPage />}></Route>
+          <Route path="/chat" element={<Chat />}/>
         </Routes>
       </main>
     </>

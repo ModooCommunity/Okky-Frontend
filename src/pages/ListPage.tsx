@@ -8,11 +8,10 @@ import ListWrite from './ListWrite'
 const ListPage = () => {
 
   const navigate = useNavigate();
-  const { category } = useParams();
 
   return (
     <>
-     <Button onClick={() => { navigate(`/${category}/new`)}}>질문하기</Button>
+     <Button onClick={() => { navigate(`/question/new`)}}>질문하기</Button>
      <PostList />
     </>
   )

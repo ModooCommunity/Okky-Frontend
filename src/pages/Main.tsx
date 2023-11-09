@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../assets/scss/pages/main.scss'
 import PostList from 'components/template/PostList'
 
 const Main = () => {
+
   return (
     <>
       <div className='main__banner'>
