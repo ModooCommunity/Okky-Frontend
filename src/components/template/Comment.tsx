@@ -3,12 +3,16 @@ import '../../assets/scss/components/comment.scss';
 import { Button } from "styles/Button";
 import { useState } from "react";
 
+interface CommentProps {
+  id: string;
+}
+
 const Comment = () => {
 
   const [isActive, setIsActive] = useState(false);
 
   const SendComment = () => {
-    console.log('a')
+    // console.log(id)
   }
 
   return (
