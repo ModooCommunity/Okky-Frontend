@@ -1,9 +1,10 @@
-import React from 'react'
+import Comment from '../components/template/Comment';
+
 
 const ListDetail = () => {
   return (
     <div>
-      상세페이지
+      <Comment />
     </div>
   )
 }
